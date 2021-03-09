@@ -1,0 +1,29 @@
+<div class="row h-100">
+  <div class="col-2">
+    <%= render "shared/navbar" %>
+  </div>  
+  <div class="col-9">
+    <div class="px-3 py-1 bordered bordered-first d-flex align-items-center">
+      <%= link_to tweets_path do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+      <div class="ml-4">
+        <h5 class="mb-0 mt-0"><%= @user.name %></h5>
+        <small class="text-secondary mt-0"> <%= pluralize(@user.tweets.count, "Tweet") %> </small>
+      </div>
+    </div>
+    <div class="p-3 bordered d-flex flex-column">
+      <div class="d-flex justify-content-between mb-2">
+        <%= image_tag "default", width: 100, height: 100 %>
+        <div class="d-flex align-items-end">
+          <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary" %> 
+        </div>
+      </div>
+      
+      <strong> <%= @user.name %> </strong>
+      <small> @<%= @user.username %> </small>
+      <small> joined <%= time_ago_in_words(@user.created_at) %> </small>
+    </div>
+    <%= render "tweets/tweets", tweets: @user.tweets %>
+  </div>
+</div>
