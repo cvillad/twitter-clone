@@ -1,0 +1,27 @@
+<div class="list-group">
+  <% users.each do |user| %>
+    <div class="list-group-item list-group-item-action tweet" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <div class="mb-1">
+          <%= link_to user_path(user.username) do%>
+            <strong><%= user.name %>  </strong> 
+          <% end %>
+          <small>@<%= user.username %>&nbsp; ·</small>
+          <small> &nbsp; <%= time_ago_in_words(user.created_at) %></small>
+        </div>
+        <div>
+          <% if user==current_user %>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary" %> 
+          <% else %>
+            <% if !@user.followings.include? user %>
+              <%= link_to "Follow", user_follow_path(user.username), method: :post, class: "btn btn-outline-primary" %>
+            <% else %>
+              <%= link_to "Unfollow", user_unfollow_path(user.username), method: :post, class: "btn btn-outline-primary" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <small>And some small print.</small>
+    </div>
+  <% end %>
+</div>

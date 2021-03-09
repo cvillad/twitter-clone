@@ -32,8 +32,12 @@
       <small> @<%= @user.username %> </small>
       <small class="mb-2 mt-2"> Joined <%= time_ago_in_words(@user.created_at) %> </small>
       <div class="d-flex">
-        <small class="mr-3"><strong style="color: rgb(217, 217, 217);"><%= @user.followings.count %></strong> Following</small>
-        <small><strong style="color: rgb(217, 217, 217);"><%= @user.followers.count %></strong> Followers</small>
+        <%= link_to user_following_path(@user.username) do %>
+          <small class="mr-3"><strong style="color: rgb(217, 217, 217);"><%= @user.followings.count %></strong> Following</small>
+        <% end %>
+        <%= link_to user_followers_path(@user.username) do %>
+          <small><strong style="color: rgb(217, 217, 217);"><%= @user.followers.count %></strong> Followers</small>
+        <% end %>
       </div>
     </div>
     <%= render "tweets/tweets", tweets: @user.tweets %>

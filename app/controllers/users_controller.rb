@@ -7,13 +7,20 @@ class UsersController < ApplicationController
 
   def follow
     current_user.followings.push(@user)
-    puts "LOL: #{current_user.followings}"
     redirect_to user_path 
   end
 
   def unfollow
     current_user.followings.delete(@user)
     redirect_to user_path 
+  end
+
+  def following
+    @users = @user.followings
+  end
+
+  def followers 
+    @users = @user.followers
   end
 
   private
