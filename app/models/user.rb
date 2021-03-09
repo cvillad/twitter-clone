@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   validates :username, presence: true, uniqueness: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true}
   attr_writer :login
+  has_one_attached :image, dependent: :destroy 
+  validates :image, content_type: ["image/png", "image/jpg", "image/jpeg"]
 
   def login
     @login || self.username || self.email
