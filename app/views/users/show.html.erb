@@ -22,7 +22,7 @@
       
       <strong> <%= @user.name %> </strong>
       <small> @<%= @user.username %> </small>
-      <small> joined <%= time_ago_in_words(@user.created_at) %> </small>
+      <small> Joined <%= time_ago_in_words(@user.created_at) %> </small>
     </div>
     <%= render "tweets/tweets", tweets: @user.tweets %>
   </div>
