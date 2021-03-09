@@ -65,14 +65,14 @@ html, body {
 }
 
 .tweet{
-  color: white;
+  color: rgb(217, 217, 217);
   background: none;
   border-color: rgb(217, 217, 217);
 }
 
 .tweet:hover{
   background: rgba(5, 5, 5, 0.788);
-  color: white;
+  color: rgb(217, 217, 217);
   cursor: pointer;
 }
 
@@ -96,4 +96,8 @@ html, body {
 
 .nav a:hover{
   color: rgb(29, 161, 242);;
+}
+
+a, a:hover{
+  color: rgb(217, 217, 217);
 }

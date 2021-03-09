@@ -3,7 +3,9 @@
     <div class="list-group-item list-group-item-action tweet" aria-current="true">
       <div class="d-flex w-100 align-items-center justify-content-between">
         <div class="mb-1">
-          <strong ><%= tweet.user.name %>  </strong> 
+          <%= link_to user_path(tweet.user.username) do%>
+            <strong><%= tweet.user.name %>  </strong> 
+          <% end %>
           <small>@<%= tweet.user.username %>&nbsp; ·</small>
           <small> &nbsp; <%= time_ago_in_words(tweet.created_at) %></small>
         </div>
