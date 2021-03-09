@@ -3,14 +3,24 @@
     <%= render "shared/navbar" %>
   </div>  
   <div class="col-9">
-    <div class="px-3 py-1 bordered bordered-first d-flex align-items-center">
-      <%= link_to user_path(@user.username) do %>
-        <i class="fas fa-arrow-left"></i>
-      <% end %>
-      <div class="ml-4">
-        <h5 class="mb-0 mt-0"><%= @user.name %></h5>
-        <small class="text-secondary mt-0"> @<%= @user.username %> </small>
+    <div class="bordered">
+      <div class="px-3 py-1 d-flex align-items-center">
+        <%= link_to user_path(@user.username) do %>
+          <i class="fas fa-arrow-left"></i>
+        <% end %>
+        <div class="ml-4">
+          <h5 class="mb-0 mt-0"><%= @user.name %></h5>
+          <small class="text-secondary mt-0"> @<%= @user.username %> </small>
+        </div>
       </div>
+      <ul class="nav nav-tabs justify-content-between">
+        <li class="nav-item w-50 text-center">
+          <%= link_to "Followers", user_followers_path(@user.username), class: "nav-link" %>
+        </li>
+        <li class="nav-item w-50 text-center">
+          <%= link_to "Following", user_following_path(@user.username), class: "nav-link active" %>
+        </li>
+      </ul>
     </div>
     <%= render "users/users", users: @user.followings %>
   </div>

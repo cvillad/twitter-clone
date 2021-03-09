@@ -49,10 +49,6 @@ html, body {
 
 .bordered {
   border: 1px solid #6c757d;
-  border-bottom: none;
-}
-
-.bordered-first{
   border-top: none;
 }
 
@@ -67,6 +63,7 @@ html, body {
 .tweet{
   color: rgb(217, 217, 217);
   background: none;
+  border-top: none;
   border-color: #6c757d;
 }
 
@@ -104,4 +101,23 @@ img{
 
 small{
   color: #6c757d;
+}
+
+.fa-arrow-left{
+  color:  rgb(29, 161, 242);
+}
+
+.nav-link.active{
+  background: none!important;
+  color: rgb(29, 161, 242)!important;
+  border: none!important;
+  border-bottom: solid rgb(29, 161, 242)!important;
+}
+
+.nav-link{
+  border: none!important;
+}
+
+.nav-tabs{
+  border: none;
 }
