@@ -16,13 +16,25 @@
       <div class="d-flex justify-content-between mb-2">
         <%= image_tag "default", width: 100, height: 100 %>
         <div class="d-flex align-items-end">
-          <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary" %> 
+          <% if @user==current_user %>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary" %> 
+          <% else %>
+            <% if !current_user.followings.include? @user %>
+              <%= link_to "Follow", user_follow_path(@user.username), method: :post, class: "btn btn-outline-primary" %>
+            <% else %>
+              <%= link_to "Unfollow", user_unfollow_path(@user.username), method: :post, class: "btn btn-outline-primary" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
       
       <strong> <%= @user.name %> </strong>
       <small> @<%= @user.username %> </small>
-      <small> Joined <%= time_ago_in_words(@user.created_at) %> </small>
+      <small class="mb-2 mt-2"> Joined <%= time_ago_in_words(@user.created_at) %> </small>
+      <div class="d-flex">
+        <small class="mr-3"><strong style="color: rgb(217, 217, 217);"><%= @user.followings.count %></strong> Following</small>
+        <small><strong style="color: rgb(217, 217, 217);"><%= @user.followers.count %></strong> Followers</small>
+      </div>
     </div>
     <%= render "tweets/tweets", tweets: @user.tweets %>
   </div>
