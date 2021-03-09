@@ -44,7 +44,56 @@ html, body {
 
 .btn-outline-primary:hover{
   background-color: black;
-  color: rgb(29, 161, 242)
+  color: rgb(29, 161, 242);
 }
 
+.bordered {
+  border: 1px solid rgb(217, 217, 217);
+  border-bottom: none;
+}
 
+.bordered-first{
+  border-top: none;
+}
+
+.fa-plus-circle{
+  color:rgb(29, 161, 242)
+}
+
+.list-group{
+  border-radius: 0;
+}
+
+.tweet{
+  color: white;
+  background: none;
+  border-color: rgb(217, 217, 217);
+}
+
+.tweet:hover{
+  background: rgba(5, 5, 5, 0.788);
+  color: white;
+  cursor: pointer;
+}
+
+.btn-tweet-options{
+  background: none;
+  color:  rgb(217, 217, 217);
+}
+
+.btn-tweet-options:hover{
+  background: rgb(27, 30, 56);
+  color:  rgb(29, 161, 242);
+}
+
+.tweet small{
+  color: rgb(217, 217, 217);
+}
+
+.nav a {
+  color: rgb(217, 217, 217);
+}
+
+.nav a:hover{
+  color: rgb(29, 161, 242);;
+}

@@ -1,0 +1,25 @@
+<nav class="nav flex-column align-items-end justify-content-between h-100">
+  <div class="d-flex flex-column align-items-center">
+    <%= link_to tweets_path, class: "nav-link" do %>
+      <i class="fab fa-twitter fa-2x mt-3"></i>
+    <% end %>
+    <%= link_to tweets_path, class: "nav-link" do %>
+      <i class="fas fa-home fa-2x"></i>
+    <% end %>
+    <%= link_to "", class: "nav-link" do %>
+      <i class="far fa-bell fa-2x"></i>
+    <% end %>
+    <%= link_to user_path(current_user.username), class: "nav-link" do %>
+      <i class="far fa-user fa-2x"></i>
+    <% end %>
+    <%= link_to new_tweet_path do %>
+      <i class="fas fa-plus-circle fa-3x mt-2"></i>
+    <% end %>
+  </div>
+    <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+      <i class="fas fa-power-off fa-2x"></i>
+    <% end %>
+  <div>
+
+  </div>
+</nav>

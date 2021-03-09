@@ -1,0 +1,27 @@
+<div class="list-group">
+  <% tweets.each do |tweet| %>
+    <div class="list-group-item list-group-item-action tweet" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <div class="mb-1">
+          <strong ><%= tweet.user.name %>  </strong> 
+          <small>@<%= tweet.user.username %>&nbsp; ·</small>
+          <small> &nbsp; <%= time_ago_in_words(tweet.created_at) %></small>
+        </div>
+        <div>
+          <% if current_user==tweet.user %>
+            <div class="dropdown">
+              <button class="btn btn-tweet-options" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ···
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Delete", tweet_path(tweet), method: :delete, class: "dropdown-item" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <p class="mb-1"> <%= tweet.content %> </p>
+      <small>And some small print.</small>
+    </div>
+  <% end %>
+</div>

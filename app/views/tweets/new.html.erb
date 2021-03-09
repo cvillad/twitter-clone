@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8 d-flex flex-column">
+      <%= simple_form_for @tweet do |f| %>
+        <%= f.input :content, input_html: { maxlength: 280 } %>
+        <div class="d-flex justify-content-end">
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <div>
+      <% end %>
+    </div>
+  </div>
+</div>
