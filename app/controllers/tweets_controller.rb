@@ -1,11 +1,16 @@
 class TweetsController < ApplicationController
+  before_action :set_tweets
+
   def index
-    @tweets = Tweet.all.reverse.paginate(page: params[:page], per_page: 10)
+    current_user.followings.each do |user|
+      @tweets.or!(user.tweets)
+    end
+    @tweets = @tweets.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     @tweet = Tweet.new
   end
 
   def create
-    @tweet = current_user.tweets.new(tweet_params)
+    @tweet = @tweets.new(tweet_params)
     if @tweet.save
       flash[:notice]="Tweet posted succesfully"
       redirect_to tweets_path
@@ -15,7 +20,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    @tweet = current_user.tweets.find(params[:id])
+    @tweet = @tweets.find(params[:id])
     @tweet.destroy
     flash[:notice] = "Tweet deleted successfully"
     redirect_to tweets_path
@@ -24,6 +29,10 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     params.require(:tweet).permit(:content)
+  end
+
+  def set_tweets
+    @tweets = current_user.tweets
   end
 
 end
