@@ -85,10 +85,15 @@ html, body {
 
 .nav a {
   color: rgb(217, 217, 217);
+  text-decoration: none;
 }
 
-.nav a:hover{
+.nav .link:hover{
   color: rgb(29, 161, 242);;
+}
+
+.nav a{
+  color: rgb(217, 217, 217);
 }
 
 a, a:hover{
@@ -120,4 +125,20 @@ small{
 
 .nav-tabs{
   border: none;
+}
+
+.dropdown-menu{
+  background: none;
+}
+
+.dropdown-item{
+  border: 1px solid #6c757d;
+  background: black;
+  color:rgb(217, 217, 217);
+}
+
+.dropdown-item:hover{
+  border: 1px solid #6c757d;
+  background: rgb(27, 30, 56);
+  color:rgb(217, 217, 217);
 }

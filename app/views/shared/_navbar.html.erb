@@ -1,25 +1,33 @@
 <nav class="nav flex-column align-items-end justify-content-between h-100">
-  <div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-column align-items-start">
     <%= link_to tweets_path, class: "nav-link" do %>
       <i class="fab fa-twitter fa-2x mt-2"></i>
     <% end %>
-    <%= link_to tweets_path, class: "nav-link" do %>
-      <i class="fas fa-home fa-2x"></i>
+    <%= link_to tweets_path, class: "nav-link link" do %>
+      <i class="fas fa-home"></i> <strong>Home</strong>
     <% end %>
-    <%= link_to "", class: "nav-link" do %>
-      <i class="far fa-bell fa-2x"></i>
+    <%= link_to "", class: "nav-link link" do %>
+      <i class="far fa-bell mr-1"></i> <strong>Notifications</strong>
     <% end %>
-    <%= link_to user_path(current_user.username), class: "nav-link" do %>
-      <i class="far fa-user fa-2x"></i>
+    <%= link_to user_path(current_user.username), class: "nav-link link" do %>
+      <i class="far fa-user mr-1"></i> <strong>Profile</strong>
     <% end %>
-    <%= link_to new_tweet_path do %>
-      <i class="fas fa-plus-circle fa-3x mt-2"></i>
-    <% end %>
+    <div class="nav-link w-100">
+      <%= link_to "Tweet", new_tweet_path, class: "btn btn-primary w-100 text-white p-2 font-weight-bold" %>
+    </div>
   </div>
-    <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-      <i class="fas fa-power-off fa-2x"></i>
-    <% end %>
-  <div>
-
+  <div class="dropdown">
+    <button class="btn mb-4 btn-nav" type="button" id="profileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="d-flex">
+        <%= image_tag "default", class: "mr-2", width: 40, height: 40 %>
+        <div class="d-flex flex-column justify-content-start">
+          <strong style="color: rgb(217, 217, 217); height: 20px"> <%= current_user.name %> </strong>
+          <small class="text-left"> @<%= current_user.username %>  </small>
+        </div>
+      </div>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="profileMenu">
+      <%= link_to "Log out @#{current_user.username}", class: "dropdown-item" %>
+    </div>
   </div>
 </nav>

@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.followings
+    @users = @user.followings.sort_by(&:name)
   end
 
   def followers 
-    @users = @user.followers
+    @users = @user.followers.sort_by(&:name)
   end
 
   private

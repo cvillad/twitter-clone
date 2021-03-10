@@ -4,10 +4,9 @@
       <div class="d-flex w-100 align-items-center justify-content-between">
         <div class="mb-1">
           <%= link_to user_path(user.username) do%>
-            <strong><%= user.name %>  </strong> 
+            <strong><%= user.name %>  </strong> <br/>
           <% end %>
-          <small>@<%= user.username %>&nbsp; ·</small>
-          <small> &nbsp; <%= time_ago_in_words(user.created_at) %></small>
+          <small>@<%= user.username %>&nbsp;</small>
         </div>
         <div>
           <% if user==current_user %>
@@ -21,7 +20,6 @@
           <% end %>
         </div>
       </div>
-      <small>And some small print.</small>
     </div>
   <% end %>
 </div>
