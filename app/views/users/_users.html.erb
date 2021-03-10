@@ -19,7 +19,7 @@
               <% if user==current_user %>
                 <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-outline-primary" %> 
               <% else %>
-                <% if !@user.followings.include? user %>
+                <% if !current_user.followings.include? user %>
                   <%= link_to "Follow", user_follow_path(user.username), method: :post, class: "btn btn-sm btn-outline-primary" %>
                 <% else %>
                   <%= link_to "Unfollow", user_unfollow_path(user.username), method: :post, class: "btn btn-sm btn-outline-primary" %>
