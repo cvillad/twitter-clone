@@ -12,13 +12,8 @@
 
   <body>
     <%= render "shared/messages"%>
-    <div class="row h-100">
-      <div class="col-3">
-        <%= render "layouts/navbar" %>
-      </div>
-      <div class="col-6">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
+
+    
   </body>
 </html>
