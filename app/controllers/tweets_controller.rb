@@ -1,9 +1,6 @@
 class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all.reverse.paginate(page: params[:page], per_page: 10)
-  end
-
-  def new
     @tweet = Tweet.new
   end
 
