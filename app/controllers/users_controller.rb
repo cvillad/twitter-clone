@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user
+  before_action :set_current_user_followings, only: [:follow, :unfollow]
 
   def show
     @user = User.find_by(username: params[:username])
   end
 
   def follow
-    current_user.followings.push(@user)
+    @current_user_followings.push(@user)
     flash[:notice] = "Now you are following @#{@user.username}"
     redirect_to user_path 
   end
 
   def unfollow
-    current_user.followings.delete(@user)
+    @current_user_followings.delete(@user)
     flash[:notice] = "You are no longer following @#{@user.username}"
     redirect_to user_path 
   end
@@ -30,4 +31,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
   end
 
+  def set_current_user_followings
+    @current_user_followings = current_user.followings
+  end
 end 
