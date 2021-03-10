@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout "follows", only: [:following, :followers]
   before_action :set_user
   before_action :set_current_user_followings, only: [:follow, :unfollow]
 
