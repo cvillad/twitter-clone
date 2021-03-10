@@ -23,7 +23,9 @@
                 </button>
                 <% if current_user==tweet.user %>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <%= link_to "Delete", tweet_path(tweet), method: :delete, class: "dropdown-item" %>
+                    <%= link_to tweet_path(tweet), method: :delete, class: "dropdown-item text-danger" do %>
+                      <i class="far fa-trash-alt mr-2"></i><small class="text-danger">Delete</small>
+                    <% end %>
                   </div>
                 <% end %>
               </div>
