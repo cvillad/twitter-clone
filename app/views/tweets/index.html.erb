@@ -9,8 +9,9 @@
     </div>
     <div class="p-3 bordered d-flex flex-column">
       <p class="text-secondary">What's happening?</p>
-      <%= link_to "Tweet", new_tweet_path, class: "btn btn-primary align-self-end font-weight-bold" %>
+      <%= link_to "Tweet", new_tweet_path, class: "btn px-3 py-2 btn-sm btn-primary align-self-end font-weight-bold" %>
     </div>
     <%= render "tweets", tweets: @tweets %>
+    <%= will_paginate @tweets, list_classes: %w(pagination bordered py-4 justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
 </div>

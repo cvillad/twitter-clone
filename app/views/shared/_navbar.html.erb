@@ -12,8 +12,8 @@
     <%= link_to user_path(current_user.username), class: "nav-link link" do %>
       <i class="far fa-user mr-1"></i> <strong>Profile</strong>
     <% end %>
-    <div class="nav-link w-100">
-      <%= link_to "Tweet", new_tweet_path, class: "btn btn-primary w-100 text-white p-2 font-weight-bold" %>
+    <div class="nav-link p-1 w-100">
+      <%= link_to "Tweet", new_tweet_path, class: "btn btn-sm btn-primary w-100 py-2 text-white font-weight-bold" %>
     </div>
   </div>
   <div class="dropdown">
@@ -27,7 +27,7 @@
       </div>
     </button>
     <div class="dropdown-menu" aria-labelledby="profileMenu">
-      <%= link_to "Log out @#{current_user.username}", class: "dropdown-item" %>
+      <%= link_to "Log out @#{current_user.username}", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </div>
   </div>
 </nav>

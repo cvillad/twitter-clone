@@ -29,6 +29,10 @@ html, body {
   //font-family: 'Roboto', sans-serif;
 }
 
+p{
+  font-size: 0.9rem;
+}
+
 .btn{
   border-radius: 50rem;
 }
@@ -50,6 +54,7 @@ html, body {
 .bordered {
   border: 1px solid #6c757d;
   border-top: none;
+  border-radius: 0;
 }
 
 .fa-plus-circle{
@@ -141,4 +146,29 @@ small{
   border: 1px solid #6c757d;
   background: rgb(27, 30, 56);
   color:rgb(217, 217, 217);
+}
+
+.page-link {
+  color: rgb(217, 217, 217);
+  background-color: black;
+  border: none;
+}
+
+.page-link:hover{
+  background-color: #242525;
+  color: rgb(217, 217, 217);
+}
+
+.page-item.active .page-link {
+  background-color: black;
+  color:rgb(29, 161, 242);
+  border: none;
+  border-bottom: solid rgb(29, 161, 242);
+}
+
+.page-item.disabled .page-link {
+  background-color: black;
+  color:#6c757d;
+  border-color: #6c757d;
+  border: none;
 }

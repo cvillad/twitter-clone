@@ -3,19 +3,22 @@
     <div class="list-group-item list-group-item-action tweet" aria-current="true">
       <div class="row">
         <div class="col-1">
+          <%= link_to user_path(tweet.user.username) do %>
+            <%= image_tag "default", width: 40, height: 40, class: "mt-2" %>
+          <% end %>
         </div>
         <div class="col-11">
           <div class="d-flex w-100 align-items-center justify-content-between">
             <div>
               <%= link_to user_path(tweet.user.username) do %>
-                <strong><%= tweet.user.name %>  </strong> 
+                <p class="font-weight-bold mb-0 d-inline"><%= tweet.user.name %>  </p> 
               <% end %>
               <small>@<%= tweet.user.username %>&nbsp; ·</small>
               <small> &nbsp; <%= time_ago_in_words(tweet.created_at) %></small>
             </div>
             <div>
               <div class="dropdown">
-                <button class="btn btn-tweet-options" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-sm btn-tweet-options" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   ···
                 </button>
                 <% if current_user==tweet.user %>

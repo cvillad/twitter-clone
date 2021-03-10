@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.followings.sort_by(&:name)
+    @users = @user.followings.order(:name).paginate(page: params[:page], per_page: 10)
   end
 
   def followers 
-    @users = @user.followers.sort_by(&:name)
+    @users = @user.followers.order(:name).paginate(page: params[:page], per_page: 10)
   end
 
   private
