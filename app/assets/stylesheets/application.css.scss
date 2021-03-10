@@ -73,7 +73,7 @@ p{
 }
 
 .tweet:hover{
-  background: rgba(5, 5, 5, 0.788);
+  background:#242525;
   color: rgb(217, 217, 217);
   cursor: pointer;
 }
@@ -84,7 +84,7 @@ p{
 }
 
 .btn-tweet-options:hover{
-  background: rgb(27, 30, 56);
+  background: #161e25;
   color:  rgb(29, 161, 242);
 }
 
@@ -103,6 +103,10 @@ p{
 
 a, a:hover{
   color: rgb(217, 217, 217);
+}
+
+.btn-nav:hover {
+  background: #161e25;
 }
 
 img{
@@ -144,7 +148,7 @@ small{
 
 .dropdown-item:hover{
   border: 1px solid #6c757d;
-  background: rgb(27, 30, 56);
+  background: #242525;;
   color:rgb(217, 217, 217);
 }
 
@@ -170,5 +174,10 @@ small{
   background-color: black;
   color:#6c757d;
   border-color: #6c757d;
+  border: none;
+}
+
+.alert{
+  background: black;
   border: none;
 }
