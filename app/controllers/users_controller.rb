@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   private
   def search_param
-    params.require(:search)
+    params[:search]
   end
 
   def set_user
