@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.3.0'
 gem 'will_paginate-bootstrap4'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
