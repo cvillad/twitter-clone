@@ -12,14 +12,14 @@
 
   <body>
     <div class="row h-100">
-      <div class="col-3 h-100">
+      <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-4 h-100">
         <%= render "layouts/navbar" %>
       </div>
-      <div class="col-6">
+      <div class="col-10 col-sm-8 col-md-7 col-lg-7 col-xl-4">
         <%= render "shared/messages"%>
         <%= yield %>
       </div>
-      <div class="col-3 mt-1 search-container">
+      <div class="col-0 col-sm-2 col-md-3 col-lg-3 col-xl-4 my-2 mx-2 search-container">
         <%= form_tag user_search_path, method: :get, class: "form-inline" do %>
           <%= submit_tag "Search", method: :get, class: "btn btn-sm btn-outline-primary", type: "hidden" %>
 

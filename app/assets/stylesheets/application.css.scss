@@ -29,6 +29,10 @@ html, body {
   //font-family: 'Roboto', sans-serif;
 }
 
+body{
+  min-width: 350px;
+}
+
 p{
   font-size: 0.9rem;
 }
@@ -93,6 +97,10 @@ p{
   text-decoration: none;
 }
 
+.nav .link{
+  margin-top: 10px;
+}
+
 .nav .link:hover{
   color: rgb(29, 161, 242);;
 }
@@ -150,6 +158,10 @@ small{
 .dropdown-item:hover{
   background: none;;
   color:rgb(217, 217, 217);
+}
+
+.pagination {
+  margin-bottom: 0;
 }
 
 .page-link {
@@ -219,4 +231,28 @@ small{
   position: relative;
 }
 
-.search-container input { text-indent: 32px;}
+.search-container input { 
+  text-indent: 32px;
+}
+
+@media(max-width: 1190px){
+  .nav-left small, .nav-left strong, .nav-left .btn-tweet{
+    display: none;
+  }
+  .nav-left .btn-icon-tweet{
+    display: block;
+  }
+
+  .nav-left .nav-icons{
+    align-items: center;
+  }
+}
+
+@media(min-width: 1191px){
+  .nav-left .btn-icon-tweet{
+    display: none;
+  }
+  .nav-left .nav-icons{
+    align-items: flex-start;
+  }
+}
