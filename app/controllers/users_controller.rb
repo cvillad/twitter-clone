@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where("name like ? or username like ?", "%#{search_param}%", "%#{search_param}%")
+    @users = User.where("lower(name) like ? or lower(username) like ?", "%#{search_param.downcase}%", "%#{search_param.downcase}%")
   end
 
   def follow
