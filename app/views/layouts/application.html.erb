@@ -11,12 +11,12 @@
   </head>
 
   <body>
-    <%= render "shared/messages"%>
     <div class="row h-100">
-      <div class="col-3">
+      <div class="col-3 h-100">
         <%= render "layouts/navbar" %>
       </div>
       <div class="col-6">
+        <%= render "shared/messages"%>
         <%= yield %>
       </div>
       <div class="col-3 mt-1 search-container">

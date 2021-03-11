@@ -178,8 +178,10 @@ small{
 }
 
 .alert{
-  background: black;
-  border: none;
+  background: none;
+  border: 1px solid #2f2f30;
+  border-top: none;
+  border-radius: 0;
 }
 
 .new-tw{

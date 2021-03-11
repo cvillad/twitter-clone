@@ -1,19 +1,11 @@
 
 <% flash.each do |name, msg| %> 
-  <div class="row">
-    <div class="col-3">
-    </div>
-    <div class="col-6">
-      <div class="bordered">
-        <div class="alert mb-0 text-<%= name=="notice" ? "success" : "danger" %>
-        alert-<%= name=="notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
-          <%= msg %> 
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>  
+  <div class="alert mb-0 text-<%= name=="notice" ? "success" : "danger" %>
+  alert-<%= name=="notice" ? "success" : "danger" %> alert-dismissible fade show bordered" role="alert">
+    <%= msg %> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
     
