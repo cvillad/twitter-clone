@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :check_signed_in
   before_action :set_tweets
 
   def index

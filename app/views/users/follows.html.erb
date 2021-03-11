@@ -17,6 +17,6 @@
     </li>
   </ul>
 </div>
-<%= render "users/users"%>
+<%= render "users/users", users: @users %>
 <%= will_paginate @users, list_classes: %w(pagination bordered py-4 justify-content-center), 
     renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

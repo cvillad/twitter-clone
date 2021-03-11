@@ -139,7 +139,7 @@ small{
 .dropdown-menu{
   border: 1px solid #6c757d;
   background: black;
-  border-radius: 20%;
+  border-radius: 15rem;
 }
 
 .dropdown-item{
@@ -192,3 +192,29 @@ small{
   border: none;
   color: rgb(217, 217, 217);
 }
+
+.search{
+  background-color: #242525;
+  color: #6c757d;
+  border-radius: 50rem;
+  border: none;
+}
+
+.search:focus{
+  background-color: black;
+  color: #6c757d;
+  border-color: rgb(29, 161, 242);;
+}
+
+.search-container .fa-search { 
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input { text-indent: 32px;}

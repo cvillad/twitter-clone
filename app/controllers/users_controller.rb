@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
+  before_action :check_signed_in
   before_action :set_user
   before_action :set_current_user_followings, only: [:follow, :unfollow]
 
   def show
     @user = User.find_by(username: params[:username])
+  end
+
+  def index
+    @users = User.where("name like ? or username like ?", "%#{search_param}%", "%#{search_param}%")
   end
 
   def follow
@@ -29,6 +34,10 @@ class UsersController < ApplicationController
   end
 
   private
+  def search_param
+    params.require(:search)
+  end
+
   def set_user
     @user = User.find_by(username: params[:username])
   end

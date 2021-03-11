@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   require 'will_paginate/array'
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def check_signed_in
+    redirect_to new_user_session_path if !user_signed_in?
+  end
+
   protected
 
   def configure_permitted_parameters
