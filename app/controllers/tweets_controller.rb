@@ -16,7 +16,8 @@ class TweetsController < ApplicationController
       flash[:notice]="Tweet posted succesfully"
       redirect_to tweets_path
     else
-      render :new
+      flash[:alert] = "Tweet content can't be empty"
+      redirect_to tweets_path
     end
   end
 
