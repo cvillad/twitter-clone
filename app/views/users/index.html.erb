@@ -1,0 +1,7 @@
+<div class="bordered px-4 py-3">
+  <strong class="mb-0">Showing results for "<%= params[:search] %>"</strong>
+</div>
+<div class="bordered px-4 py-3">
+  <h5 class="mb-0">People</h5>
+</div>
+<%= render "users", users: @users %>

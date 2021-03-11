@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   post "/unfollow/:username", to: "users#unfollow", as: "user_unfollow"
   get "/:username/following", to: "users#following", as: "user_following"
   get "/:username/followers", to: "users#followers", as: "user_followers"
+  get "/users/search", to: "users#index", as: "user_search"
 
 end

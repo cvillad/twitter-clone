@@ -19,6 +19,14 @@
       <div class="col-6">
         <%= yield %>
       </div>
+      <div class="col-3 mt-1 search-container">
+        <%= form_tag user_search_path, method: :get, class: "form-inline" do %>
+          <%= submit_tag "Search", method: :get, class: "btn btn-sm btn-outline-primary", type: "hidden" %>
+
+          <span class="fas fa-search"></span>
+          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control search" %>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>
