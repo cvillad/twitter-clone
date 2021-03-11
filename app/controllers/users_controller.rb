@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
+    @tweets = @user.tweets.order(created_at: :desc)
   end
 
   def index
