@@ -4,7 +4,7 @@
   <% end %>
   <div class="ml-4">
     <h5 class="mb-0 mt-0"><%= @user.name %></h5>
-    <small class="text-secondary mt-0"> <%= pluralize(@user.tweets.count, "Tweet") %> </small>
+    <small class="text-secondary mt-0"> <%= pluralize(@user.tweets.size, "Tweet") %> </small>
   </div>
 </div>
 <div class="p-3 bordered d-flex flex-column">
