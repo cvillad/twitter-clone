@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     current_user.followings.each do |user|
-      @tweets.or!(user.tweets)
+      @tweets.or!(user.tweets.includes(:user))
     end
     @tweets = @tweets.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     @tweet = Tweet.new
@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
   end
 
   def set_tweets
-    @tweets = current_user.tweets
+    @tweets = current_user.tweets.includes(:user)
   end
 
 end
