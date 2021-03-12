@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this project you need to use ruby-3.0.0:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* If you are using rvm, you can simply use:
+  * rvm install ruby-3.0.0 (if you have not this version of ruby)
+  * rvm use ruby-3.0.0
+* For making all the necesary migrations for de database use:
+  * run rails db:migrate
+* Next, to run the server use:
+  * run rails server
+  * run localhost:3000 in your browser (or the port you are using)
