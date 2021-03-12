@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def unfollow
-    @current_user_followings.delete(@user)
+    @current_user_followings.destroy(@user)
     flash[:notice] = "You are no longer following @#{@user.username}"
     redirect_back(fallback_location: user_path(@user.username)) 
   end
