@@ -10,15 +10,17 @@
   </div>
   <ul class="nav nav-tabs justify-content-between">
     <li class="nav-item w-50 text-center">
-      <%= link_to "Followers", user_followers_path(@user.username), class: "nav-link #{"active" if current_page?(action: "followers")}" %>
+      <%= link_to "Followers", users_follows_path(@user.username, "followers"), class: "nav-link #{"active" if current_page?(follow: "followers")}" %>
     </li>
     <li class="nav-item w-50 text-center">
-      <%= link_to "Following", user_following_path(@user.username), class: "nav-link #{"active" if current_page?(action: "following")}" %>
+      <%= link_to "Following", users_follows_path(@user.username, "following"), class: "nav-link #{"active" if current_page?(follow: "following")}" %>
     </li>
   </ul>
 </div>
 <div class="list-group">
-  <%= render @users %>
+  <% @users.each do |user| %>
+    <%= render "users/user", user: user %>
+  <% end %>
   <%= will_paginate @users, list_classes: %w(pagination bordered py-4 justify-content-center), 
     renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>

@@ -15,9 +15,9 @@
         <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary" %> 
       <% else %>
         <% if !current_user.followings.include? @user %>
-          <%= link_to "Follow", user_follow_path(@user.username), method: :put, class: "btn btn-outline-primary" %>
+          <%= link_to "Follow", users_follow_path(@user.username), method: :post, class: "btn btn-outline-primary" %>
         <% else %>
-          <%= link_to "Unfollow", user_unfollow_path(@user.username), method: :put, class: "btn btn-outline-primary" %>
+          <%= link_to "Unfollow", users_unfollow_path(@user.username), method: :delete, class: "btn btn-outline-primary" %>
         <% end %>
       <% end %>
     </div>
@@ -27,10 +27,10 @@
   <small> @<%= @user.username %> </small>
   <small class="mb-2 mt-2"> Joined <%= time_ago_in_words(@user.created_at) %> </small>
   <div class="d-flex">
-    <%= link_to user_following_path(@user.username) do %>
+    <%= link_to users_follows_path(@user.username, "following") do %>
       <small class="mr-3"><strong style="color: rgb(217, 217, 217);"><%= @user.followings.size %></strong> Following</small>
     <% end %>
-    <%= link_to user_followers_path(@user.username) do %>
+    <%= link_to users_follows_path(@user.username, "followers") do %>
       <small><strong style="color: rgb(217, 217, 217);"><%= @user.followers.size %></strong> Followers</small>
     <% end %>
   </div>
