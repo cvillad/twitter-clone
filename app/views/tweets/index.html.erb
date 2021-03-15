@@ -20,6 +20,8 @@
     </div>
   </div>
 </div>
-<%= render "tweets", tweets: @tweets %>
-<%= will_paginate @tweets, list_classes: %w(pagination bordered py-4 justify-content-center), 
+<div class="list-group">
+  <%= render @tweets %>
+  <%= will_paginate @tweets, list_classes: %w(pagination bordered py-4 justify-content-center), 
     renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
