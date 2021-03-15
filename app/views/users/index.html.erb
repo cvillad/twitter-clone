@@ -4,4 +4,8 @@
 <div class="bordered px-4 py-3">
   <h5 class="mb-0">People</h5>
 </div>
-<%= render "users", users: @users %>
+<div class="list-group">
+  <%= render @users %>
+  <%= will_paginate @users, list_classes: %w(pagination bordered py-4 justify-content-center), 
+    renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>

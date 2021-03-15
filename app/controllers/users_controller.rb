@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where("lower(name) like ? or lower(username) like ?", "%#{search_param.downcase}%", "%#{search_param.downcase}%")
+    @users = User.where("lower(name) like ? or lower(username) like ?", "%#{search_param.downcase}%", "%#{search_param.downcase}%").paginate(page: params[:page], per_page: 10)
   end
 
   def follow
